@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ChatNav</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+<!-- SPLASH SCREEN -->
+<div id="splashScreen">
+    <div class="splash-content">
+        <div class="splash-logo">💬</div>
+        <h1>ChatNav</h1>
+        <p>Your smarter chat experience</p>
+        <div class="splash-loader">
+            <div class="loader-bar"></div>
+        </div>
+    </div>
+</div>
+
+<!-- MAIN APP -->
+<div class="app" id="mainApp" style="display:none;">
+
+    <!-- CONTACTS SCREEN -->
+    <div class="screen" id="contactsScreen">
+
+        <div class="contacts-header">
+            <h1 class="logo">💬 ChatNav</h1>
+            <p class="logo-sub">Your smarter chat</p>
+        </div>
+
+        <div class="contact-search-box">
+            <i class="fa fa-search"></i>
+            <input type="text" id="contactSearch" placeholder="Search contacts..."/>
+        </div>
+
+        <div class="contacts-nav">
+            <button class="cnav-btn active" onclick="showContactsSection('chats')">
+                <i class="fa fa-comment"></i>
+                <span>Chats</span>
+            </button>
+            <button class="cnav-btn" onclick="showContactsSection('notes')">
+                <i class="fa fa-sticky-note"></i>
+                <span>Notes</span>
+            </button>
+            <button class="cnav-btn" onclick="showContactsSection('todo')">
+                <i class="fa fa-check-circle"></i>
+                <span>Todo</span>
+            </button>
+        </div>
+
+        <!-- CHATS PANEL -->
+        <div id="chatsPanel" class="panel">
+            <div class="contact-list">
+                <div class="contact" onclick="openChat('Rahul','R','purple')">
+                    <div class="avatar purple">R</div>
+                    <div class="contact-info">
+                        <h4>Rahul</h4>
+                        <p>Hey! What are you doing?</p>
+                    </div>
+                    <div class="contact-meta">
+                        <span class="time">9:00 PM</span>
+                        <span class="online-dot">●</span>
+                    </div>
+                </div>
+                <div class="contact" onclick="openChat('Priya','P','pink')">
+                    <div class="avatar pink">P</div>
+                    <div class="contact-info">
+                        <h4>Priya</h4>
+                        <p>Send me the image!</p>
+                    </div>
+                    <div class="contact-meta">
+                        <span class="time">8:45 PM</span>
+                        <span class="online-dot">●</span>
+                    </div>
+                </div>
+                <div class="contact" onclick="openChat('Arjun','A','green')">
+                    <div class="avatar green">A</div>
+                    <div class="contact-info">
+                        <h4>Arjun</h4>
+                        <p>Thanks a lot!</p>
+                    </div>
+                    <div class="contact-meta">
+                        <span class="time">8:30 PM</span>
+                        <span class="online-dot">●</span>
+                    </div>
+                </div>
+                <div class="contact" onclick="openChat('Sneha','S','orange')">
+                    <div class="avatar orange">S</div>
+                    <div class="contact-info">
+                        <h4>Sneha</h4>
+                        <p>How are you?</p>
+                    </div>
+                    <div class="contact-meta">
+                        <span class="time">8:00 PM</span>
+                        <span class="online-dot">●</span>
+                    </div>
+                </div>
+                <div class="contact" onclick="openChat('Kiran','K','blue')">
+                    <div class="avatar blue">K</div>
+                    <div class="contact-info">
+                        <h4>Kiran</h4>
+                        <p>Send me the video!</p>
+                    </div>
+                    <div class="contact-meta">
+                        <span class="time">7:45 PM</span>
+                        <span class="online-dot">●</span>
+                    </div>
+                </div>
+                <div class="contact" onclick="openChat('Meera','M','red')">
+                    <div class="avatar red">M</div>
+                    <div class="contact-info">
+                        <h4>Meera</h4>
+                        <p>Good morning!</p>
+                    </div>
+                    <div class="contact-meta">
+                        <span class="time">7:30 PM</span>
+                        <span class="online-dot">●</span>
+                    </div>
+                </div>
+                <div class="contact" onclick="openChat('Vikram','V','yellow')">
+                    <div class="avatar yellow">V</div>
+                    <div class="contact-info">
+                        <h4>Vikram</h4>
+                        <p>See you tomorrow!</p>
+                    </div>
+                    <div class="contact-meta">
+                        <span class="time">6:45 PM</span>
+                        <span class="online-dot">●</span>
+                    </div>
+                </div>
+                <div class="contact" onclick="openChat('Divya','D','teal')">
+                    <div class="avatar teal">D</div>
+                    <div class="contact-info">
+                        <h4>Divya</h4>
+                        <p>Send me the pdf!</p>
+                    </div>
+                    <div class="contact-meta">
+                        <span class="time">5:20 PM</span>
+                        <span class="online-dot">●</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- NOTES PANEL -->
+        <div id="notesPanel" class="panel" style="display:none;">
+            <div id="notesListView">
+                <div class="panel-header-row">
+                    <span class="panel-header">📝 Notes</span>
+                    <button class="add-btn" onclick="showAddNote()">＋</button>
+                </div>
+                <div class="search-inside">
+                    <i class="fa fa-search"></i>
+                    <input type="text" id="noteSearch" placeholder="Search notes..." oninput="searchNotes()"/>
+                </div>
+                <div id="notesList" class="notes-list"></div>
+            </div>
+            <div id="addNoteView" style="display:none;">
+                <div class="panel-header-row">
+                    <button class="back-small-btn" onclick="hideAddNote()">
+                        <i class="fa fa-arrow-left"></i>
+                    </button>
+                    <span class="panel-header">Add Note</span>
+                </div>
+                <div class="add-note-area">
+                    <textarea id="noteInput" placeholder="Write your note here..."></textarea>
+                    <button class="save-btn" onclick="addNote()">
+                        <i class="fa fa-save"></i> Save Note
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- TODO PANEL -->
+        <div id="todoPanel" class="panel" style="display:none;">
+            <div class="panel-header-row">
+                <span class="panel-header">✅ Todo List</span>
+            </div>
+            <div class="todo-input-area">
+                <input type="text" id="todoInput" placeholder="Add a new task..."/>
+                <input type="datetime-local" id="todoReminder"/>
+                <button onclick="addTodo()"><i class="fa fa-plus"></i> Add Task</button>
+            </div>
+            <div class="todo-sections">
+                <div class="todo-section-title">📌 Pending</div>
+                <div id="pendingList" class="todo-list"></div>
+                <div class="todo-section-title">✅ Completed</div>
+                <div id="completedList" class="todo-list"></div>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- CHAT SCREEN -->
+    <div class="screen" id="chatScreen" style="display:none;">
+
+        <!-- Chat Header -->
+        <div class="chat-header">
+            <button class="back-btn" onclick="goBack()">
+                <i class="fa fa-arrow-left"></i>
+            </button>
+            <div class="chat-avatar" id="chatAvatar">R</div>
+            <div class="chat-user-info">
+                <h3 id="chatName">Rahul</h3>
+                <span class="online-status">● Online</span>
+            </div>
+            <div class="chat-header-actions">
+                <button class="header-btn" onclick="showChatStarred()" title="Starred">
+                    <i class="fa fa-star"></i>
+                </button>
+                <button class="header-btn" onclick="showMediaSection()" title="Media">
+                    <i class="fa fa-image"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Smart Search Bar -->
+        <div class="smart-search">
+            <i class="fa fa-search"></i>
+            <input type="text" id="msgSearch" placeholder="Search messages..."/>
+            <select id="msgType">
+                <option value="all">All</option>
+                <option value="text">Text</option>
+                <option value="image">Image</option>
+                <option value="audio">Audio</option>
+                <option value="video">Video</option>
+                <option value="pdf">PDF</option>
+                <option value="doc">Doc</option>
+            </select>
+            <input type="text" id="manualDate" placeholder="DD/MM/YYYY or YYYY"/>
+            <input type="date" id="dateSearch"/>
+            <button onclick="searchMessages()"><i class="fa fa-search"></i></button>
+            <button onclick="clearSearch()" class="clear-btn">✕</button>
+        </div>
+
+        <!-- Chat Messages -->
+        <div class="chat-messages" id="chatMessages"></div>
+
+        <!-- No Messages Found -->
+        <div id="noMsgFound" class="no-msg-found" style="display:none;">
+            <i class="fa fa-inbox"></i>
+            <p id="noMsgText">No messages found!</p>
+            <button onclick="clearSearch()">← Back to Chat</button>
+        </div>
+
+        <!-- STARRED SECTION INSIDE CHAT -->
+        <div id="chatStarredSection" class="overlay-section" style="display:none;">
+            <div class="overlay-header">
+                <button onclick="hideChatStarred()"><i class="fa fa-arrow-left"></i></button>
+                <h3>⭐ Starred Messages</h3>
+            </div>
+            <div id="chatStarredList" class="starred-list"></div>
+        </div>
+
+        <!-- MEDIA SECTION INSIDE CHAT -->
+        <div id="mediaSection" class="overlay-section" style="display:none;">
+            <div class="overlay-header">
+                <button onclick="hideMediaSection()"><i class="fa fa-arrow-left"></i></button>
+                <h3>Media, Links & Docs</h3>
+            </div>
+            <div class="media-tabs">
+                <button class="media-tab active" onclick="showMediaTab('images', this)">Images</button>
+                <button class="media-tab" onclick="showMediaTab('videos', this)">Videos</button>
+                <button class="media-tab" onclick="showMediaTab('audios', this)">Audios</button>
+                <button class="media-tab" onclick="showMediaTab('docs', this)">Docs</button>
+            </div>
+            <div id="mediaContent" class="media-content"></div>
+        </div>
+
+        <!-- FULL SCREEN MEDIA VIEWER -->
+        <div id="mediaViewer" class="media-viewer" style="display:none;">
+            <button class="close-viewer" onclick="closeMediaViewer()">✕</button>
+            <div id="mediaViewerContent"></div>
+        </div>
+
+        <!-- Chat Input -->
+        <div class="chat-input">
+            <input type="file" id="fileInput" style="display:none" onchange="sendFile(event)"/>
+            <button class="emoji-btn" onclick="toggleEmoji()">😊</button>
+            <div class="emoji-picker" id="emojiPicker" style="display:none;">
+                <span onclick="addEmoji('😊')">😊</span>
+                <span onclick="addEmoji('😂')">😂</span>
+                <span onclick="addEmoji('❤️')">❤️</span>
+                <span onclick="addEmoji('👍')">👍</span>
+                <span onclick="addEmoji('🙏')">🙏</span>
+                <span onclick="addEmoji('😍')">😍</span>
+                <span onclick="addEmoji('😢')">😢</span>
+                <span onclick="addEmoji('🔥')">🔥</span>
+                <span onclick="addEmoji('🎉')">🎉</span>
+                <span onclick="addEmoji('😎')">😎</span>
+                <span onclick="addEmoji('🤔')">🤔</span>
+                <span onclick="addEmoji('👏')">👏</span>
+                <span onclick="addEmoji('💪')">💪</span>
+                <span onclick="addEmoji('✅')">✅</span>
+                <span onclick="addEmoji('🙌')">🙌</span>
+                <span onclick="addEmoji('😅')">😅</span>
+                <span onclick="addEmoji('🥳')">🥳</span>
+                <span onclick="addEmoji('😴')">😴</span>
+                <span onclick="addEmoji('🤣')">🤣</span>
+                <span onclick="addEmoji('💯')">💯</span>
+            </div>
+            <button class="attach-btn" onclick="document.getElementById('fileInput').click()">
+                <i class="fa fa-paperclip"></i>
+            </button>
+            <button class="voice-btn" id="voiceBtn" onclick="toggleVoiceRecord()">
+                <i class="fa fa-microphone"></i>
+            </button>
+            <input type="text" id="messageInput" placeholder="Type a message..."/>
+            <button class="send-btn" onclick="sendMessage()">
+                <i class="fa fa-paper-plane"></i>
+            </button>
+        </div>
+
+        <!-- FORWARD MODAL -->
+        <div id="forwardModal" class="forward-modal" style="display:none;">
+            <div class="forward-content">
+                <div class="forward-header">
+                    <h3>Forward to</h3>
+                    <button onclick="closeForward()">✕</button>
+                </div>
+                <div id="forwardContacts" class="forward-contacts"></div>
+            </div>
+        </div>
+
+    </div>
+
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
