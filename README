@@ -1,1 +1,114 @@
+# 💬 ChatNav
 
+ChatNav is a modern chat application that combines messaging, notes, and task management into a single interface with a simple and interactive user experience.
+
+---
+
+## 🚀 Features
+
+### Splash Screen
+- Animated loading screen
+- Smooth app transition
+
+### Chats
+- Open and close chat
+- Contact search
+- Send messages
+- Chat rendering
+- Emoji support
+- Search messages
+- Starred messages
+- Forward messages
+
+### Notes
+- Add notes
+- Edit notes
+- Delete notes
+- Search notes
+
+### Todo
+- Add tasks
+- Add reminder date and time
+- Separate Pending and Completed tasks
+
+### Media & Files
+- File upload
+- Media viewer
+
+### Voice
+- Voice recording interface
+
+---
+
+## 🛠 Technologies Used
+
+Frontend:
+- HTML
+- CSS
+- JavaScript
+
+Backend:
+- Java
+
+Tools:
+- Eclipse IDE
+- Git
+- GitHub
+
+---
+
+## 📂 Project Structure
+
+```
+ChatNav/
+│
+├── frontend/
+│   ├── index.html
+│   ├── style.css
+│   └── script.js
+│
+├── src/
+├── README.md
+└── .gitignore
+```
+
+---
+
+## ▶️ Installation & Run
+
+1. Clone repository
+
+```
+git clone YOUR_GITHUB_LINK
+```
+
+2. Open in Eclipse
+
+3. Run backend
+
+4. Open frontend in browser
+
+---
+
+## 🎯 Project Objectives
+
+- Provide chat communication
+- Manage notes efficiently
+- Track tasks with reminders
+- Support media interaction
+
+---
+
+## 🔮 Future Enhancements
+
+- Database integration
+- Authentication
+- Notifications
+- Cloud storage
+- Dark mode
+
+---
+
+## 👩‍💻 Developed By
+
+Rakshita S Dollin
