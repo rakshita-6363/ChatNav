@@ -1,114 +1,136 @@
-# 💬 ChatNav
+# 💬 ChatNav — Smart Chat Application
 
-ChatNav is a modern chat application that combines messaging, notes, and task management into a single interface with a simple and interactive user experience.
-
----
-
-## 🚀 Features
-
-### Splash Screen
-- Animated loading screen
-- Smooth app transition
-
-### Chats
-- Open and close chat
-- Contact search
-- Send messages
-- Chat rendering
-- Emoji support
-- Search messages
-- Starred messages
-- Forward messages
-
-### Notes
-- Add notes
-- Edit notes
-- Delete notes
-- Search notes
-
-### Todo
-- Add tasks
-- Add reminder date and time
-- Separate Pending and Completed tasks
-
-### Media & Files
-- File upload
-- Media viewer
-
-### Voice
-- Voice recording interface
+A full stack chat application built to solve real problems faced in WhatsApp daily.
 
 ---
 
-## 🛠 Technologies Used
+## 🚀 About The Project
 
-Frontend:
-- HTML
-- CSS
-- JavaScript
-
-Backend:
-- Java
-
-Tools:
-- Eclipse IDE
-- Git
-- GitHub
+ChatNav is a full stack chat application developed using Core Java, JDBC, MySQL, HTML, CSS and JavaScript. This project was built by identifying real problems faced in WhatsApp and providing better solutions.
 
 ---
 
-## 📂 Project Structure
+## ❌ Problems I Identified in WhatsApp
 
-```
+- Search option is hidden behind 3 dots — most users don't even know it exists
+- Cannot search messages by typing date manually — only calendar selection works
+- No scrollbar inside chats — have to scroll manually with hand
+- When starred message is deleted — screen automatically jumps down
+- WhatsApp does not show "No messages found" — jumps to nearest message instead
+- Have to switch between 3 different apps for Chat, Notes and Todo
+
+---
+
+## ✅ Solutions I Built in ChatNav
+
+- Search bar directly visible inside every chat
+- Search by text, image, video, audio, PDF type
+- Search by year only, month/year, or full date DD/MM/YYYY
+- Matching text highlights in yellow like Ctrl+F
+- Scrollbar inside every chat window
+- Scroll position stays fixed when message is deleted
+- Clearly shows "No images found" or "No messages found on this date"
+- Notes section built inside the app — add, edit, search, delete
+- Todo list built inside the app — add tasks with reminder alert
+- Pending and Completed tasks shown separately
+- Media section shows all images, videos, audios, documents separately
+- Forward message to any contact
+- Starred messages section inside each chat
+
+---
+
+## 🛠️ Tech Stack
+
+| Layer | Technology |
+|-------|-----------|
+| Backend | Core Java, JDBC |
+| Database | MySQL |
+| Frontend | HTML, CSS, JavaScript |
+| Storage | localStorage |
+
+---
+
+## 📁 Project Structure
 ChatNav/
-│
-├── frontend/
-│   ├── index.html
-│   ├── style.css
-│   └── script.js
-│
+
 ├── src/
-├── README.md
-└── .gitignore
-```
+
+│   └── com/
+
+│       └── chatnav/
+
+│           ├── model/
+
+│           │   ├── User.java
+
+│           │   ├── Message.java
+
+│           │   ├── Notes.java
+
+│           │   └── TodoItem.java
+
+│           ├── dao/
+
+│           │   ├── DBConnection.java
+
+│           │   ├── UserDAO.java
+
+│           │   ├── MessageDAO.java
+
+│           │   ├── NotesDAO.java
+
+│           │   └── TodoDAO.java
+
+│           ├── service/
+
+│           │   ├── UserService.java
+
+│           │   ├── MessageService.java
+
+│           │   ├── NotesService.java
+
+│           │   └── TodoService.java
+
+│           └── main/
+
+│               └── Main.java
+
+└── frontend/
+
+├── index.html
+
+├── style.css
+
+└── script.js
+---
+
+## ✨ Features
+
+- 💬 Real time chat with auto replies
+- 🔍 Smart search with text highlighting
+- 📅 Flexible date search — year, month/year, full date
+- 📁 Send images, videos, audios, PDFs, documents
+- ⭐ Star important messages
+- 🗑️ Delete messages with fixed scroll position
+- 📂 Media section — images, videos, audios, docs separately
+- ➤ Forward messages to any contact
+- 📝 Notes — add, edit, search, delete
+- ✅ Todo list with reminder bell alert
+- 💾 All data saved permanently in localStorage and MySQL
 
 ---
 
-## ▶️ Installation & Run
+## 🎯 Key Highlights
 
-1. Clone repository
-
-```
-git clone YOUR_GITHUB_LINK
-```
-
-2. Open in Eclipse
-
-3. Run backend
-
-4. Open frontend in browser
+- Identified real world problems in existing chat platforms
+- Built end to end full stack solution from scratch
+- Complete CRUD operations with MySQL database
+- Persistent data storage across sessions
+- Clean and modern dark themed UI
 
 ---
 
-## 🎯 Project Objectives
+## 👨‍💻 Developed By
 
-- Provide chat communication
-- Manage notes efficiently
-- Track tasks with reminders
-- Support media interaction
-
----
-
-## 🔮 Future Enhancements
-
-- Database integration
-- Authentication
-- Notifications
-- Cloud storage
-- Dark mode
-
----
-
-## 👩‍💻 Developed By
-
-Rakshita S Dollin
+[Rakshita S D] — ECE Student  
+[rakshita0dollin@gmail.com]  
